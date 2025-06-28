@@ -1,0 +1,105 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background-color: #ecdcc2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+@keyframes  loading{
+    20% {
+        transform: translateY(-20px);
+        opacity: 0.1;
+      }
+      0%, 40% {
+        transform: translateY(0);
+      }
+
+}
+@keyframes bo {
+    50%,100%{
+        bottom: 95%;
+    }
+}
+@keyframes wave {
+    0%{
+        transform: translateX(0) rotate(0deg);
+    }
+    25%{
+        transform: translateX(8px) rotate(4deg);
+    }
+    50%{
+        transform: translateX(0) rotate(0deg);
+    }
+    75%{
+        transform: translateX(-8px) rotate(-4deg);
+    }
+    100%{
+        transform: translateX(0) rotate(0deg);
+    }
+}
+.cup{
+    height: 300px;
+    width: 180px;
+    border: 6px solid white;
+    border-radius: 10px 10px 50px 50px;
+    position: absolute;
+}
+.straw{
+    background-color: white;
+    height: 400px;
+    width: 20px;
+    position: relative;
+    bottom: 110px;
+    left: 40px;
+    transform: rotate(-10deg);
+    border-radius: 5px 5px 5px 50px;
+    transform-origin: center;
+    transition: transform 0.6s ease;
+
+}
+.bo{
+    background-color: #a78550;
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    border-radius: 50%;
+    right: 3px;
+    bottom: 95px;
+    box-shadow: 30px 0 0 #a78550,
+    60px 0 0 #a78550,
+    90px 0 0 #a78550;
+    transform: rotate(90deg);
+    animation:bo 8s linear infinite;
+    display: flex;
+}
+.drink{
+    // background-color: aqua;
+    height: 280px;
+    width: 160px;
+    border-radius: 10px 10px 50px 50px;
+    position: absolute;
+    border: 2px solid #a78550;
+    transition:all 0.3s ease;
+    left: 6px;
+    top: 6px;
+}
+.cup:hover{
+    animation: wave 0.6s infinite ease-in-out;
+}
+.cup:hover .straw{
+    transform: rotate(-25deg);
+}
+.loading{
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 600px;
+    overflow: hidden;
+    animation: loading 2s linear infinite;
+}
